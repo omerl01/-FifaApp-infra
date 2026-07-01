@@ -27,3 +27,15 @@ variable "desired_nodes" {
   type        = number
   default     = 2
 }
+
+variable "tfc_organization" {
+  description = "The Terraform Cloud organization name"
+  type        = string
+  default     = "omer-levi"
+}
+
+variable "tfc_workspace" {
+  description = "The Terraform Cloud workspace name"
+  type        = string
+  default     = "fifaapp-eks"
+}
