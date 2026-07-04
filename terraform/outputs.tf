@@ -21,3 +21,8 @@ output "ecr_registry" {
   description = "ECR registry base URL — use this for 'docker login'"
   value       = split("/", aws_ecr_repository.frontend.repository_url)[0]
 }
+
+output "vpc_id" {
+  description = "The ID of the VPC"
+  value       = module.vpc.vpc_id
+}
