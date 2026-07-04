@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: fifaapp
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/omerl01/-FifaApp-infra
+    targetRevision: main
+    path: k8s
+    directory:
+      recurse: true   # required — without this ArgoCD only reads the root k8s/ files, not backend/ frontend/ subdirs
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: fifaapp
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
