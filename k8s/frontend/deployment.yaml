@@ -15,8 +15,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: 782818417469.dkr.ecr.us-east-1.amazonaws.com/fifaapp-frontend:latest
-          imagePullPolicy: Always
+          image: 782818417469.dkr.ecr.us-east-1.amazonaws.com/fifaapp-frontend:590a805
           ports:
             - containerPort: 80
           volumeMounts:
