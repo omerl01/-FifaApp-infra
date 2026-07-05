@@ -26,3 +26,9 @@ output "vpc_id" {
   description = "The ID of the VPC"
   value       = module.vpc.vpc_id
 }
+
+
+output "gha_role" {
+  value       = aws_iam_role.gha_role.arn
+  description = "The ARN of the IAM role for GitHub Actions to assume"
+}
